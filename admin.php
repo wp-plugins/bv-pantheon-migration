@@ -121,7 +121,15 @@ As clear from the picture above, password is same as your Pantheon dashboard pas
 ?>
 	<form action="https://webapp.blogvault.net/home/api_signup" style="padding:0 2% 2em 1%;" method="post" name="signup">
 	<h1>Migrate Site</h1>
-	<p style="padding-bottom:1%;"><font size="3">This Plugin makes it very easy to migrate your site to Pantheon</font></p><br/>
+	<p><font size="3">This Plugin makes it very easy to migrate your site to Pantheon</font></p>
+<?php if ($_error == "email") { 
+	echo '<div class="error" style="padding-bottom:0.5%;"><p>There is already an account with this email.</p></div>';
+} else if ($_error == "blog") {
+	echo '<div class="error" style="padding-bottom:0.5%;"><p>Could not create an account. Please contact <a href="http://blogvault.net/contact/">blogVault Support</a></p></div>';
+} else if ($_error == "custom") {
+	echo '<div class="error" style="padding-bottom:0.5%;"><p>'.base64_decode($_GET['message']).'</p></div>';
+}
+?>
 	<input type="hidden" name="bvsrc" value="wpplugin" />
 	<input type="hidden" name="migrate" value="pantheon" />
 	<input type="hidden" name="loc" value="MIGRATE3FREE" />
@@ -130,18 +138,7 @@ As clear from the picture above, password is same as your Pantheon dashboard pas
 	<input type="hidden" name="secret" value="<?php echo $blogvault->getOption('bvSecretKey'); ?>">
 	<input type='hidden' name='bvnonce' value='<?php echo wp_create_nonce("bvnonce") ?>'>
 	<div class="row-fluid">
-		<div style="color:red; font-weight: bold;" align="left">
-<?php if ($_error == "email") { ?>
-				There is already an account with this email.
-<?php } else if ($_error == "blog") { ?>
-				Could not create an account. Please contact <a href="http://blogvault.net/contact/">blogVault Support</a>
-<?php } else if ($_error == "custom") {
-	$_message = base64_decode($_GET['message']);
-?>
-			<?php echo $_message; ?>
-<?php } ?>
-		</div>
-		<div class="span5" style="border-right: 1px solid #EEE">
+		<div class="span5" style="border-right: 1px solid #EEE; padding-top:1%;">
 			<label id='label_email'>Email</label>
 			 <div class="control-group">
 				<div class="controls">
