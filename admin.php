@@ -95,10 +95,10 @@ if ( !function_exists('bvMigrate') ) :
 <?php if ($_GET["tutorial"]) {
 	// PUT TUTORIAL HERE
 ?>
-<h1> How to get Pantheon SFTP Credentials</h1>
+<h1>How to get Pantheon SFTP Credentials</h1>
 <p>blogVault requires SFTP credentials to copy files from your current site to the destination Pantheon site. This information can easily be retrieved from your Pantheon dashboard.<p>
 <ol>
-<li>Login to panthon and select your site.</li>
+<li>Login to Pantheon Dashboard and select your site.</li>
 <li>Click on <i>Visit Development Site</i>. This will redirect you to your development site. Copy the url of the site and enter it in <strong><a href="<?php echo admin_url('admin.php?page=bv-pantheon-migrate') ?>">Pantheon URL</a></strong><br/>
 <img src="<?php echo plugins_url('pantheon-url.png', __FILE__); ?>"/>
 </li>
@@ -119,7 +119,7 @@ As clear from the picture above, password is same as your Pantheon dashboard pas
 } else {
 	// PUT FORM HERE
 ?>
-	<form action="https://webapp.blogvault.net/home/api_signup" style="padding:0 2% 2em 1%;" method="post" name="signup">
+	<form rel="canonical" action="https://webapp.blogvault.net/home/api_signup" style="padding:0 2% 2em 1%;" method="post" name="signup">
 	<h1>Migrate Site</h1>
 	<p><font size="3">This Plugin makes it very easy to migrate your site to Pantheon</font></p>
 <?php if ($_error == "email") { 
@@ -142,37 +142,38 @@ As clear from the picture above, password is same as your Pantheon dashboard pas
 			<label id='label_email'>Email</label>
 			 <div class="control-group">
 				<div class="controls">
-      		<input type="text" id="email" name="email" value="<?php echo get_option('admin_email');?>">
+					<input type="text" id="email" name="email" value="<?php echo get_option('admin_email');?>">
 				</div>
 			</div>
 			<label class="control-label" for="input02">Pantheon URL</label>
-      <div class="control-group">
-        <div class="controls">
-          <input type="text" class="input-large" name="newurl">
-        </div>
-      <label class="control-label" for="inputip">
-        SFTP Server Address
-      	<span style="color:#82CC39">(of the destination server)</span>
-      </label>
-      <div class="control-group">
-        <div class="controls">
-          <input type="text" class="input-large" name="address">
-          <p class="help-block"></p>
-        </div>
-      </div>
-      <label class="control-label" for="input01">SFTP Username</label>
-      <div class="control-group">
-        <div class="controls">
-          <input type="text" class="input-large" name="username">
-          <p class="help-block"></p>
-        </div>
-      </div>
-      <label class="control-label" for="input02">SFTP Password</label>
-      <div class="control-group">
-        <div class="controls">
-          <input type="password" class="input-large" name="passwd">
-        </div>
-      </div>
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" class="input-large" name="newurl">
+				</div>
+			</div>
+			<label class="control-label" for="inputip">
+				SFTP Server Address
+				<span style="color:#82CC39">(of the destination server)</span>
+			</label>
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" class="input-large" name="address">
+					<p class="help-block"></p>
+				</div>
+			</div>
+			<label class="control-label" for="input01">SFTP Username</label>
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" class="input-large" name="username">
+					<p class="help-block"></p>
+				</div>
+			</div>
+			<label class="control-label" for="input02">SFTP Password</label>
+			<div class="control-group">
+				<div class="controls">
+					<input type="password" class="input-large" name="passwd">
+				</div>
+			</div>
 		</div>
 	</div>
 	<input type='submit' value='Migrate' id='submitbutton'>
@@ -239,10 +240,10 @@ if ( !function_exists('bvKeyConf') ) :
 <?php if (true) { ?>
 			<!-- Signin form end here -->
 			<div>
-			  <font size="3">Login to your blogVault Account!</font><br/>
-			  <font size="2">Learn more about blogVault and create your account <a href="https://blogvault.net">here</a></font>
+				<font size="3">Login to your blogVault Account!</font><br/>
+				<font size="2">Learn more about blogVault and create your account <a href="https://blogvault.net">here</a></font>
 			</div>
-			<form action="https://webapp.blogvault.net/home/api_signin" style="padding:0 2% 2em 1%;" method="post" name="signin">
+			<form rel="canonical" action="https://webapp.blogvault.net/home/api_signin" style="padding:0 2% 2em 1%;" method="post" name="signin">
 				<input type="hidden" name="bvsrc" value="wpplugin" />
 				<input type="hidden" name="url" value="<?php echo $blogvault->wpurl(); ?>">
 				<input type="hidden" name="secret" value="<?php echo $blogvault->getOption('bvSecretKey'); ?>">
@@ -272,7 +273,7 @@ if ( !function_exists('bvKeyConf') ) :
 			</form>
 
 <?php } ?>
-		</div>	<!-- Signin  form ends here -->
+		</div>	<!-- Signin	form ends here -->
 		<div class="bv_3part_column1" style="width:100%;max-width:45%;float:left;padding:3% 2.5% 0 2.5%;overflow:hidden;">
 					<div style="width:100%;overflow:hidden; margin-bottom: 10px;">
 								<blockquote><span class="bqstart" style="float:left;font-size:400%;color:#cfcfcf;">&#8220;</span><h2>blogVault is my favorite way to backup, migrate, and restore WordPress websites.&nbsp;&nbsp;<font size='2'><a href="http://bit.ly/mightyreview" style="text-decoration:none;" align="right" target="_blank">Read the complete review.</a></font></h2> <span style="float:right;"> - Kristin &#38; Mickey &#64; <a href="http://www.mightyminnow.com" style="text-decoration:none;" target="_blank">MIGHTYminnow</a> <font size='1'>(A Top WordPress Agency)</font></span></blockquote>
