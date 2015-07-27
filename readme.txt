@@ -1,10 +1,8 @@
-=== BV Pantheon Migration ===
-Name: BV Pantheon Migration
-Contributors: BV Pantheon Migration
+=== Pantheon Migration ===
+Contributors: akshatc, blogvault
 Tags: pantheon, migration
-Donate link: http://blogvault.net
 Requires at least: 1.5
-Tested up to: 4.2
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +11,7 @@ The easiest way to migrate your site to Pantheon
 
 == Description ==
 
-The easiest way to migrate your site to Pantheon. The blogVault Account can be created by visiting the website, https://blogvault.net. This account credentials, can then be used to sign-in to the plugin.
+The easiest way to migrate your site to Pantheon.
 
 == Changelog ==
 = 1.16 =

@@ -110,7 +110,7 @@ class BlogVault {
 					}
 					$bfa[] = $fdata;
 					$bfc++;
-					if ($bfc == 512) {
+					if ($bfc == $bsize) {
 						$str = serialize($bfa);
 						$clt->newChunkedPart(strlen($str).":".$str);
 						$bfc = 0;
@@ -381,6 +381,13 @@ class BlogVault {
 		return true;
 	}
 
+	function repairTable($table) {
+		global $wpdb, $blogvault;
+		$info = $wpdb->get_results("REPAIR TABLE $table;", ARRAY_A);
+		$blogvault->addStatus("status", $info);
+		return true;
+	}
+   
 	function tableCreate($tbl) {
 		global $wpdb;
 		$str = "SHOW CREATE TABLE " . $tbl . ";";
@@ -479,19 +486,30 @@ class BlogVault {
 	}
 
 	function updateOption($key, $value) {
-		if ($this->isMultisite()) {
-			update_blog_option(1, $key, $value);
+		if (function_exists('update_site_option')) {
+			update_site_option($key, $value);
 		} else {
-			update_option($key, $value);
+			if ($this->isMultisite()) {
+				update_blog_option(1, $key, $value);
+			} else {
+				update_option($key, $value);
+			}
 		}
 	}
 
 	function getOption($key) {
-		if ($this->isMultisite()) {
-			return get_blog_option(1, $key, false);
-		} else {
-			return get_option($key, false);
+		$res = false;
+		if (function_exists('get_site_option')) {
+			$res = get_site_option($key, false);
 		}
+		if ($res === false) {
+			if ($this->isMultisite()) {
+				$res = get_blog_option(1, $key, false);
+			} else {
+				$res = get_option($key, false);
+			}
+		}
+		return $res;
 	}
 
 	function getAllTables() {
@@ -512,17 +530,20 @@ class BlogVault {
 		$this->addStatus("requestedsig", $sig);
 		$this->addStatus("requestedtime", $_REQUEST['bvTime']);
 		$this->addStatus("requestedversion", $version);
-		if ($time < intval($this->getOption('bvLastRecvTime')) - 300) {
+		$bvlastrecvtime = $this->getOption('bvLastRecvTime');
+		if ($time < intval($bvlastrecvtime) - 300) {
+			$this->addStatus("bvlastrecvtime", $bvlastrecvtime);
 			return false;
 		}
 		if (array_key_exists('sha1', $_REQUEST)) {
-			if (sha1($method.$secret.$time.$version) != $sig) {
-				return false;
-			}
+			$sig_match = sha1($method.$secret.$time.$version);
+			$this->addStatus('sha1', $_REQUEST['sha1']);
 		} else {
-			if (md5($method.$secret.$time.$version) != $sig) {
-				return false;
-			}
+			$sig_match = md5($method.$secret.$time.$version); 
+		}
+		if ($sig_match != $sig) {
+			$this->addStatus("sigmatch", $sig_match);
+			return false;
 		}
 		$this->updateOption('bvLastRecvTime', $time);
 		return true;
