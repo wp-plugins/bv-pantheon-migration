@@ -26,7 +26,7 @@ endif;
 
 if (!function_exists('bvPtnAdminInitHandler')) :
 	function bvPtnAdminInitHandler() {
-		global $bvNotice, $blogvault;
+		global $bvNotice, $blogvault, $bvPtnAdminPage;
 		global $sidebars_widgets;
 		global $wp_registered_widget_updates;
 
@@ -34,7 +34,7 @@ if (!function_exists('bvPtnAdminInitHandler')) :
 			return;
 
 		if (isset($_REQUEST['bvnonce']) && wp_verify_nonce($_REQUEST['bvnonce'], "bvnonce")) {
-			if (isset($_REQUEST['blogvaultkey'])) {
+			if (isset($_REQUEST['blogvaultkey']) && isset($_REQUEST['page']) && $_REQUEST['page'] == $bvPtnAdminPage) {
 				if ((strlen($_REQUEST['blogvaultkey']) == 64)) {
 					$keys = str_split($_REQUEST['blogvaultkey'], 32);
 					$blogvault->updatekeys($keys[0], $keys[1]);
