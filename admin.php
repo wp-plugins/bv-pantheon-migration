@@ -94,7 +94,7 @@ if ( !function_exists('bvPtnMigrate') ) :
 		</div>
 
 		<div id="wrapper toplevel_page_ptn-automated-migration">
-			<form dummy=">" action="https://webapp.blogvault.net/home/migrate" style="padding:0 2% 2em 1%;" method="post" name="signup">
+			<form id="ptn_migrate_form" dummy=">" action="https://webapp.blogvault.net/home/migrate" style="padding:0 2% 2em 1%;" method="post" name="signup">
 				<h1>Migrate Site to Pantheon</h1>
 				<p><font size="3">This plugin makes it very easy to migrate your site to Pantheon</font></p>
 <?php if ($_error == "email") { 
@@ -109,6 +109,7 @@ if ( !function_exists('bvPtnMigrate') ) :
 				<input type="hidden" name="migrate" value="pantheon" />
 				<input type="hidden" name="type" value="sftp" />
 				<input type="hidden" name="setkeysredirect" value="true" />
+				<p style="font-size: 11px;">By pressing the "Migrate" button, you are agreeing to <a href="https://blogvault.net/tos/">BlogVault's Terms of Service</a></p>
 				<input type="hidden" name="url" value="<?php echo $blogvault->wpurl(); ?>" />
 				<input type="hidden" name="secret" value="<?php echo $blogvault->getOption('bvSecretKey'); ?>">
 				<input type='hidden' name='bvnonce' value='<?php echo wp_create_nonce("bvnonce") ?>'>
@@ -153,16 +154,18 @@ if ( !function_exists('bvPtnMigrate') ) :
 							</div>
 						</div>
 <?php if (array_key_exists('auth_required_source', $_REQUEST)) { ?>
-						<label class="control-label" for="input02" style="color:red">User <small>(for this site)</small></label>
-						<div class="control-group">
-							<div class="controls">
-								<input type="text" class="input-large" name="httpauth_src_user">
+						<div id="source-auth">
+							<label class="control-label" for="input02" style="color:red">User <small>(for this site)</small></label>
+							<div class="control-group">
+								<div class="controls">
+									<input type="text" class="input-large" name="httpauth_src_user">
+								</div>
 							</div>
-						</div>
-						<label class="control-label" for="input02" style="color:red">Password <small>(for this site)</small></label>
-						<div class="control-group">
-							<div class="controls">
-								<input type="password" class="input-large" name="httpauth_src_password">
+							<label class="control-label" for="input02" style="color:red">Password <small>(for this site)</small></label>
+							<div class="control-group">
+								<div class="controls">
+									<input type="password" class="input-large" name="httpauth_src_password">
+								</div>
 							</div>
 						</div>
 <?php } ?>
