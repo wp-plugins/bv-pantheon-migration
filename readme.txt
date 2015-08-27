@@ -1,5 +1,5 @@
 === Pantheon Migration ===
-Contributors: akshatc, blogvault
+Contributors: akshatc, blogvault, atjuch
 Tags: pantheon, migration
 Requires at least: 1.5
 Tested up to: 4.3
