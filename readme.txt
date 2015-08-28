@@ -11,7 +11,10 @@ The easiest way to migrate your site to Pantheon
 
 == Description ==
 
-The easiest way to migrate your site to Pantheon.
+Pantheon is a website management platform for WordPress. The Pantheon Migration Plugin allows you to easily migrate your WordPress site to the platform, from any other web host
+Just provide your Pantheon SFTP credentials, and the plugin will take care of the rest!
+
+Don’t waste time manually migrating sites, focus on your projects and we’ll make it easy to get up and running on Pantheon.
 
 == Changelog ==
 = 1.17 =
