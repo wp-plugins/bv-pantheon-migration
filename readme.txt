@@ -32,6 +32,12 @@ Get the info below from your Pantheon account
 
 ![Alt text](https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png)
 
+<img src="https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png">
+
+[img]https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png[/img]
+
+http://take.ms/yUhoH
+
 Enter the required information
 
 ![SFTP Information](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/sftpconnection.png "SFTP Information")
