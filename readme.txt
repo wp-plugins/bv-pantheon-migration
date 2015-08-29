@@ -28,7 +28,7 @@ Once the plugin is activated, click on Pantheon Migration in the left side navig
 
 Get the info below from your Pantheon account
 
-![Pantheon Dashboard](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/dashboard.png "Pantheon Dashboard")
+![Alt text](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/dashboard.png)
 
 Enter the required information
 
