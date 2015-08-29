@@ -15,6 +15,8 @@ Pantheon is a website management platform for WordPress. The Pantheon Migration 
 
 Don’t waste time manually migrating sites, focus on your projects and we’ll make it easy to get up and running on Pantheon.
 
+Shout out to [BlogVault.net](https://blogvault.net/) for the development and hand in creating this plugin. By using this plugin you are agreeing to their [Terms of Service](https://blogvault.net/tos)
+
 == Installation ==
 
 = There are two methods = 
@@ -26,7 +28,11 @@ Once the plugin is activated, click on Pantheon Migration in the left side navig
 
 Get the info below from your Pantheon account
 
+![Pantheon Dashboard](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/dashboard.png "Pantheon Dashboard")
+
 Enter the required information
+
+![SFTP Information](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/sftpconnection.png "SFTP Information")
 
 `Email:` (this can be any email address and will receive status updates on your migration)
 `Destination URL:` (this will be your pantheon address you are migrating to, example: http://dev-sitename.pantheon.io)
