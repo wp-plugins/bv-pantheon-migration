@@ -24,7 +24,9 @@ Don’t waste time manually migrating sites, focus on your projects and we’ll 
 
 Once the plugin is activated, click on Pantheon Migration in the left side navigation
 
-Enter the required information from your Pantheon account:
+Get the info below from your Pantheon account
+
+Enter the required information
 
 `Email:` (this can be any email address and will receive status updates on your migration)
 `Destination URL:` (this will be your pantheon address you are migrating to, example: http://dev-sitename.pantheon.io)
@@ -40,7 +42,7 @@ After the migration is complete there will be a button you can click to see the 
 
 = 1) What information will the plugin ask for? =
 
-You will have to provide the plugin your email address, destination url, SFTP host name, SFTP username, and SFTP password from your Pantheon account.
+You will have to provide the plugin your email address, destination url, SFTP host name, SFTP username, and SFTP password from your Pantheon account. Please read the [Installation section](https://wordpress.org/plugins/bv-pantheon-migration/installation/) for more information on where to find this.
 
 = 2) Is Multisite supported with this plugin = 
 
