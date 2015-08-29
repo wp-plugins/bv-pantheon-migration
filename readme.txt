@@ -30,17 +30,9 @@ Get the info below from your Pantheon account
 
 ![Alt text](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/dashboard.png)
 
-![Alt text](https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png)
-
-<img src="https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png">
-
-[img]https://monosnap.com/file/QYu9N8tNYdloW838reOGwN0cJF9o1V.png[/img]
-
-http://take.ms/yUhoH
-
 Enter the required information
 
-![SFTP Information](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/sftpconnection.png "SFTP Information")
+![Alt text](http://plugins.svn.wordpress.org/bv-pantheon-migration/assets/sftpconnection.png)
 
 `Email:` (this can be any email address and will receive status updates on your migration)
 `Destination URL:` (this will be your pantheon address you are migrating to, example: http://dev-sitename.pantheon.io)
