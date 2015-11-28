@@ -2,7 +2,7 @@
 Contributors: akshatc, blogvault, atjuchgmailcom
 Tags: pantheon, migration
 Requires at least: 1.5
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -76,6 +76,11 @@ No, but we would love to have you signup for a free account on our website to tr
 1. Adding information to the Pantheon Migration plugin
 
 == Changelog ==
+= 1.20 =
+* Adding DB Signature and Server Signature to uniquely identify a site
+* Adding the stats api to the WordPress Backup plugin.
+* Sending tablename/rcount as part of the callback
+
 = 1.17 =
 * Add support for repair table so that the backup plugin itself can be used to repair tables without needing PHPMyAdmin access
 * Making the plugin to be available network wide.
